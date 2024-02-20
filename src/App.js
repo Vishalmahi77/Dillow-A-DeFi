@@ -33,10 +33,10 @@ function App() {
     const homes = []
 
     for (var i = 1; i <= totalSupply; i++) {
-      const uri = await realEstate.tokenURI(i)
-      const response = await fetch(uri)
-      const metadata = await response.json()
-      homes.push(metadata)
+      const Uri = await realEstate.tokenURI(i)
+      const response = await fetch(Uri)
+      const metaData = await response.json()
+      homes.push(metaData)
     }
 
     setHomes(homes)

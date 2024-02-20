@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 interface IERC721 {
@@ -9,7 +9,7 @@ interface IERC721 {
     ) external;
 }
 
-contract Escrow {
+contract Page {
     address public nftAddress;
     address payable public seller;
     address public inspector;

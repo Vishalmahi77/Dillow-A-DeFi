@@ -14,7 +14,7 @@ describe('Escrow', () => {
         [buyer, seller, inspector, lender] = await ethers.getSigners()
 
         // Deploy Real Estate
-        const RealEstate = await ethers.getContractFactory('RealEstate')
+        const RealEstate = await ethers.getContractFactory('Restate')
         realEstate = await RealEstate.deploy()
 
         // Mint 
@@ -22,7 +22,7 @@ describe('Escrow', () => {
         await transaction.wait()
 
         // Deploy Escrow
-        const Escrow = await ethers.getContractFactory('Escrow')
+        const Escrow = await ethers.getContractFactory('Page')
         escrow = await Escrow.deploy(
             realEstate.address,
             seller.address,
