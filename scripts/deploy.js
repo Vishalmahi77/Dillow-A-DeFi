@@ -9,8 +9,8 @@ async function main() {
   const [buyer, seller, inspector, lender] = await ethers.getSigners()
 
   // Deploy Real Estate
-  const RealEstate = await ethers.getContractFactory('Restate')
-  const realEstate = await RealEstate.deploy()
+  const Restate = await ethers.getContractFactory('Restate')
+  const realEstate = await Restate.deploy()
   await realEstate.deployed()
 
   console.log(`Deployed Real Estate Contract at: ${realEstate.address}`)
@@ -21,9 +21,9 @@ async function main() {
     await transaction.wait()
   }
 
-  // Deploy Escrow
-  const Escrow = await ethers.getContractFactory('Page')
-  const escrow = await Escrow.deploy(
+  // Deploy Page
+  const Page = await ethers.getContractFactory('Page')
+  const escrow = await Page.deploy(
     realEstate.address,
     seller.address,
     inspector.address,
@@ -31,7 +31,7 @@ async function main() {
   )
   await escrow.deployed()
 
-  console.log(`Deployed Escrow Contract at: ${escrow.address}`)
+  console.log(`Deployed Page Contract at: ${escrow.address}`)
   console.log(`Listing 3 properties...\n`)
 
   for (let i = 0; i < 3; i++) {
@@ -53,8 +53,6 @@ async function main() {
   console.log(`Finished.`)
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;

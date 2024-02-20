@@ -1,5 +1,5 @@
 {
-  "name": "millow",
+  "name": "dillow",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,5 +39,9 @@
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "@openzeppelin/contracts": "^4.7.3",
     "hardhat": "^2.12.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Vishalmahi77/Dillow-A-DeFi",
+  "author": "Vishal Srivastava",
+  "license": "MIT"
 }

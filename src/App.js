@@ -7,8 +7,8 @@ import Search from './components/Search';
 import Home from './components/Home';
 
 // ABIs
-import RealEstate from './abis/RealEstate.json'
-import Escrow from './abis/Escrow.json'
+import RealEstate from './abis/Restate.json'
+import Escrow from './abis/Page.json'
 
 // Config
 import config from './config.json';

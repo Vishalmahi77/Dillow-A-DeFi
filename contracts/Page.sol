@@ -82,12 +82,7 @@ contract Page {
         approval[_nftID][msg.sender] = true;
     }
 
-    // Finalize Sale
-    // -> Require inspection status (add more items here, like appraisal)
-    // -> Require sale to be authorized
-    // -> Require funds to be correct amount
-    // -> Transfer NFT to buyer
-    // -> Transfer Funds to Seller
+ 
     function finalizeSale(uint256 _nftID) public {
         require(inspectionPassed[_nftID]);
         require(approval[_nftID][buyer[_nftID]]);
@@ -105,8 +100,6 @@ contract Page {
         IERC721(nftAddress).transferFrom(address(this), buyer[_nftID], _nftID);
     }
 
-    // Cancel Sale (handle earnest deposit)
-    // -> if inspection status is not approved, then refund, otherwise send to seller
     function cancelSale(uint256 _nftID) public {
         if (inspectionPassed[_nftID] == false) {
             payable(buyer[_nftID]).transfer(address(this).balance);
